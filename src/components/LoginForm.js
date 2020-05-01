@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const LoginForm = () => {
     const [username, setUsername] = useState('');
@@ -21,6 +21,12 @@ const LoginForm = () => {
             console.log(err);
         }
     }
+
+    useEffect(() => {
+        // Update the document title using the browser API
+        document.title = `Hello ${username}`;
+      });
+
 
     return (
         <div>
